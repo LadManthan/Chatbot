@@ -1,0 +1,22 @@
+2025-12-13 20:03:49,809 - ==== New Chat Session Started ====
+2025-12-13 20:03:58,494 - User Input: what is super over?
+2025-12-13 20:03:58,700 - Bot Response: A Super Over is a tie-breaker where each team plays one additional over to decide the winner. (tag: super over, confidence: 0.9702)
+2025-12-13 20:03:58,700 - Processing time: 0.2046 seconds
+2025-12-13 20:04:08,080 - User Input: virat kohli records?
+2025-12-13 20:04:08,086 - Bot Response: Virat Kohli has numerous records including fastest ODI milestones and leading IPL scorer. (tag: virat kohli records, confidence: 0.9983)
+2025-12-13 20:04:08,087 - Processing time: 0.0052 seconds
+2025-12-13 20:04:20,386 - User Input: number of overs in t20 match?
+2025-12-13 20:04:20,389 - Bot Response: Over 100 countries play cricket, including 12 ICC Full Members and 100+ Associates. (tag: number of teams, confidence: 0.9585)
+2025-12-13 20:04:20,389 - Processing time: 0.0012 seconds
+2025-12-13 20:04:30,722 - User Input: what is test cricket?
+2025-12-13 20:04:30,723 - Bot Response: A Super Over is a tie-breaker where each team plays one additional over to decide the winner. (tag: super over, confidence: 0.7601)
+2025-12-13 20:04:30,724 - Processing time: 0.0010 seconds
+2025-12-13 20:04:40,228 - User Input: t20
+2025-12-13 20:04:40,229 - Bot Response: I do not understand... (confidence: 0.4970)
+2025-12-13 20:04:40,230 - Processing time: 0.0019 seconds
+2025-12-13 20:04:45,891 - User Input: T20 crickwt?
+2025-12-13 20:04:45,894 - Bot Response: I do not understand... (confidence: 0.4970)
+2025-12-13 20:04:45,894 - Processing time: 0.0016 seconds
+2025-12-13 20:05:02,324 - User Input: how many was a batsman can be dismissed?\
+2025-12-13 20:05:02,327 - Bot Response: Batters can be dismissed in several ways: bowled, caught, LBW, run-out, stumped, and more. (tag: dismissals, confidence: 0.9995)
+2025-12-13 20:05:02,328 - Processing time: 0.0026 seconds

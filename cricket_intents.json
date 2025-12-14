@@ -1,0 +1,252 @@
+{
+  "intents": [
+    {
+      "tag": "cricket",
+      "patterns": [
+        "What is cricket?", "Explain cricket.", "Define cricket.", "Tell me about cricket."],
+      "responses": [
+        "Cricket is a bat-and-ball team sport played between two teams of eleven players each.",
+        "It is a sport where one team bats to score runs while the other bowls and fields to stop them.",
+        "Cricket is a competitive team game involving batting, bowling, and fielding."
+      ]
+    },
+    {
+      "tag": "formats",
+      "patterns": [
+        "What are the formats of cricket?",
+        "How many types of cricket formats are there?",
+        "Explain cricket formats.",
+        "Tell me the main cricket formats."
+      ],
+      "responses": [
+        "The three major formats are Test cricket, One Day Internationals (ODIs), and Twenty20 (T20).",
+        "Cricket is mainly played in three formats: Tests, ODIs, and T20s.",
+        "Cricket formats include Test matches, one-day games, and T20 cricket."
+      ]
+    },
+    {
+      "tag": "test match duration",
+      "patterns": [
+        "How long is a Test match?",
+        "What is the duration of a Test match?",
+        "Explain Test match time.",
+        "How many days does a Test match last?"
+      ],
+      "responses": [
+        "A Test match lasts up to five days, with each team getting two innings.",
+        "Test cricket is played over five days, making it the longest format.",
+        "A full Test match spans five days of play."
+      ]
+    },
+    {
+      "tag": "odi overs",
+      "patterns": [
+        "How many overs are in an ODI?",
+        "What is the number of overs in ODI cricket?",
+        "Explain ODI overs.",
+        "Overs in One Day International?"
+      ],
+      "responses": [
+        "An ODI consists of 50 overs per side.",
+        "Each team gets 50 overs in a One Day International.",
+        "ODI cricket is played with 50 overs for each team."
+      ]
+    },
+    {
+      "tag": "t20 overs",
+      "patterns": [
+        "How many overs are in a T20 match?",
+        "Explain T20 overs.",
+        "Overs in T20 cricket?",
+        "What is the length of a T20 match?"
+      ],
+      "responses": [
+        "A T20 match consists of 20 overs per side.",
+        "Twenty20 cricket features 20 overs for each team.",
+        "T20 games are short-format matches with 20 overs per innings."
+      ]
+    },
+    {
+      "tag": "dismissals",
+      "patterns": [
+        "How can a batter be dismissed?",
+        "Ways a batsman can get out?",
+        "Different dismissals in cricket?",
+        "Tell me types of outs in cricket."
+      ],
+      "responses": [
+        "Common dismissals include bowled, caught, LBW, run-out, stumped, hit-wicket, and handled ball.",
+        "Batters can be dismissed in several ways: bowled, caught, LBW, run-out, stumped, and more.",
+        "There are multiple dismissals in cricket such as bowled, caught, LBW, and run-out."
+      ]
+    },
+    {
+      "tag": "powerplay",
+      "patterns": [
+        "What is a powerplay?",
+        "Explain powerplay in cricket.",
+        "What happens in a powerplay?",
+        "Tell me about powerplay overs."
+      ],
+      "responses": [
+        "A powerplay is a set of overs with fielding restrictions, usually limiting fielders outside the 30-yard circle.",
+        "Powerplay overs enforce stricter fielding rules to encourage scoring.",
+        "During a powerplay, only a few fielders are allowed outside the inner circle."
+      ]
+    },
+    {
+      "tag": "drs",
+      "patterns": [
+        "What is DRS?",
+        "Explain Decision Review System.",
+        "How does DRS work?",
+        "What is the use of DRS in cricket?"
+      ],
+      "responses": [
+        "DRS allows teams to challenge umpire decisions using technologies like Hawk-Eye and UltraEdge.",
+        "The Decision Review System helps review on-field umpiring decisions with advanced technology.",
+        "DRS lets players request a technology-assisted review of an umpire's call."
+      ]
+    },
+    {
+      "tag": "hattrick",
+      "patterns": [
+        "What is a hat-trick?",
+        "Explain hat-trick in cricket.",
+        "How does a bowler get a hat-trick?",
+        "Meaning of hat-trick?"
+      ],
+      "responses": [
+        "A hat-trick happens when a bowler takes three wickets in three consecutive balls.",
+        "When a bowler dismisses three batters in three deliveries, it is called a hat-trick.",
+        "Three wickets in back-to-back deliveries results in a hat-trick."
+      ]
+    },
+    {
+      "tag": "maiden over",
+      "patterns": [
+        "What is a maiden over?",
+        "Explain maiden over.",
+        "Meaning of maiden over?",
+        "No run over in cricket?"
+      ],
+      "responses": [
+        "A maiden over is an over in which no runs are scored off the bat.",
+        "If no runs are conceded in an over, it is termed a maiden.",
+        "A maiden over means the batting side scores zero off legal deliveries."
+      ]
+    },
+    {
+      "tag": "match fixing",
+      "patterns": [
+        "What is match-fixing?",
+        "Explain match fixing in cricket.",
+        "Meaning of match fixing?",
+        "Why is match fixing banned?"
+      ],
+      "responses": [
+        "Match-fixing is the illegal act of manipulating the result of a match for unfair gain.",
+        "It refers to influencing match outcomes dishonestly, which is strictly prohibited.",
+        "Match-fixing involves corrupt practices to alter the natural course of a game."
+      ]
+    },
+    {
+      "tag": "dls method",
+      "patterns": [
+        "What is the DLS method?",
+        "Explain Duckworth Lewis Stern method.",
+        "How does DLS work?",
+        "What is DLS in cricket?"
+      ],
+      "responses": [
+        "DLS is a formula used to reset targets in rain-affected limited-overs games.",
+        "The Duckworth–Lewis–Stern method recalculates scores when weather interrupts matches.",
+        "DLS adjusts the target score based on overs lost and resources remaining."
+      ]
+    },
+    {
+      "tag": "super over",
+      "patterns": [
+        "What is a super over?",
+        "Explain super over in cricket.",
+        "How does a super over work?",
+        "When is a super over played?"
+      ],
+      "responses": [
+        "A Super Over is a tie-breaker where each team plays one additional over to decide the winner.",
+        "When scores are tied, teams play a six-ball shootout called a Super Over.",
+        "A Super Over determines the winner if the match ends in a tie."
+      ]
+    },
+    {
+      "tag": "cricket management",
+      "patterns": [
+        "Who manages cricket?",
+        "Which body controls cricket?",
+        "Who governs cricket worldwide?",
+        "What organisation runs cricket?"
+      ],
+      "responses": [
+        "The ICC oversees cricket globally, while each country has its own governing board.",
+        "Cricket is managed internationally by the ICC and locally by national cricket bodies.",
+        "The International Cricket Council handles global cricket administration."
+      ]
+    },
+    {
+      "tag": "number of teams",
+      "patterns": [
+        "How many countries play cricket?",
+        "How many known teams are playing cricket?",
+        "Number of cricket-playing nations?",
+        "How many ICC member countries?"
+      ],
+      "responses": [
+        "Over 100 countries play cricket, including 12 ICC Full Members and 100+ Associates.",
+        "More than 100 nations participate in cricket worldwide.",
+        "Cricket is played by over a hundred ICC-recognized teams."
+      ]
+    },
+    {
+      "tag": "india icc trophies",
+      "patterns": [
+        "How many ICC trophies has India won?",
+        "List India's ICC trophies.",
+        "ICC trophies won by India?",
+        "What ICC titles does India have?"
+      ],
+      "responses": [
+        "India has won 5 ICC trophies: 1983 WC, 2007 T20 WC, 2011 WC, 2013 Champions Trophy, and 2024 T20 WC.",
+        "India holds five major ICC titles, including two ODI World Cups and two T20 World Cups.",
+        "India has secured multiple ICC championships across different formats."
+      ]
+    },
+    {
+      "tag": "famous indian players",
+      "patterns": [
+        "Who are famous Indian cricket players?",
+        "Name some popular Indian cricketers.",
+        "Greatest Indian cricketers?",
+        "List top Indian cricket players."
+      ],
+      "responses": [
+        "Sachin Tendulkar, MS Dhoni, Virat Kohli, Rohit Sharma, Ganguly, Dravid, Kapil Dev, and Bumrah are famous players.",
+        "Some legendary Indian cricketers include Sachin, Dhoni, Kohli, Rohit, and Dravid.",
+        "India has many great players such as Tendulkar, Kohli, Dhoni, and Bumrah."
+      ]
+    },
+    {
+      "tag": "virat kohli records",
+      "patterns": [
+        "What are Virat Kohli's records?",
+        "Tell me batting records of Virat Kohli.",
+        "List achievements of Virat Kohli.",
+        "What records does Kohli hold?"
+      ],
+      "responses": [
+        "Kohli holds records like most ODI centuries (50+), fastest to 12k ODI runs, most T20I runs, and highest IPL runs.",
+        "Virat Kohli has numerous records including fastest ODI milestones and leading IPL scorer.",
+        "He is one of cricket’s greatest batters with multiple world records in ODIs, T20Is, and IPL."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #bec4e2ff 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 600px;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .download-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .download-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 70%;
+        }
+
+        .message-content {
+            padding: 12px 18px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-label {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .message.bot .message-label {
+            text-align: left;
+        }
+
+        .message.user .message-label {
+            text-align: right;
+        }
+
+        .chat-input-container {
+            display: flex;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .send-button, .end-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .end-button {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 12px 20px;
+        }
+
+        .send-button:hover, .end-button:hover {
+            transform: scale(1.05);
+        }
+
+        .send-button:active, .end-button:active {
+            transform: scale(0.95);
+        }
+
+        .send-button:disabled, .end-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 12px 18px;
+            background: white;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            max-width: 70px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-indicator.show {
+            display: block;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: #888;
+            padding: 20px;
+            font-style: italic;
+        }
+
+        .system-message {
+            text-align: center;
+            color: #f5576c;
+            padding: 15px;
+            margin: 10px auto;
+            background: #ffe5e5;
+            border-radius: 10px;
+            font-weight: 600;
+            max-width: 80%;
+        }
+
+        .success-message {
+            text-align: center;
+            color: #28a745;
+            padding: 15px;
+            margin: 10px auto;
+            background: #d4edda;
+            border-radius: 10px;
+            font-weight: 600;
+            max-width: 80%;
+        }
+
+        /* Scrollbar styling */
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        @media (max-width: 600px) {
+            .message-wrapper {
+                max-width: 85%;
+            }
+
+            .send-button {
+                padding: 12px 18px;
+            }
+
+            .end-button {
+                padding: 12px 15px;
+                font-size: 12px;
+            }
+
+            .download-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+                right: 10px;
+            }
+
+            .chat-header {
+                font-size: 18px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            🏏 Cricket Chatbot
+            <button class="download-btn" id="downloadBtn" title="Download Chat as PDF">
+                📄 Export PDF
+            </button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                👋 Welcome! Ask me something about cricket.<br>
+                <small style="color: #aaa; margin-top: 5px; display: block;">Type "quit" to end the chat • Export your conversation as PDF anytime</small>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <input 
+                type="text" 
+                class="chat-input" 
+                id="userInput" 
+                placeholder="Type your message here..."
+                autocomplete="off"
+            >
+            <button class="send-button" id="sendButton">Send</button>
+            <button class="end-button" id="endButton" title="End Chat">End</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+        const endButton = document.getElementById('endButton');
+        const downloadBtn = document.getElementById('downloadBtn');
+        let chatEnded = false;
+
+        // Auto-scroll to bottom
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            const label = sender === 'bot' ? 'Bot' : 'You';
+            
+            messageDiv.innerHTML = `
+                <div class="message-wrapper">
+                    <div class="message-label">${label}</div>
+                    <div class="message-content">${text}</div>
+                </div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Add system message
+        function addSystemMessage(text, type = 'error') {
+            const systemDiv = document.createElement('div');
+            systemDiv.className = type === 'success' ? 'success-message' : 'system-message';
+            systemDiv.textContent = text;
+            chatMessages.appendChild(systemDiv);
+            scrollToBottom();
+        }
+
+        // Show/hide typing indicator
+        function toggleTypingIndicator(show) {
+            const existingIndicator = document.querySelector('.typing-indicator');
+            
+            if (show) {
+                if (!existingIndicator) {
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'message bot';
+                    typingDiv.innerHTML = `
+                        <div class="message-wrapper">
+                            <div class="message-label">Bot</div>
+                            <div class="typing-indicator show">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    `;
+                    chatMessages.appendChild(typingDiv);
+                    scrollToBottom();
+                }
+            } else {
+                if (existingIndicator) {
+                    existingIndicator.closest('.message').remove();
+                }
+            }
+        }
+
+        // Download chat history
+        async function downloadChat() {
+            try {
+                const response = await fetch('/download_chat', {
+                    method: 'GET',
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    
+                    // Get filename from response headers or use default
+                    const contentDisposition = response.headers.get('content-disposition');
+                    let filename = 'chat_history.pdf';
+                    if (contentDisposition) {
+                        const matches = /filename="?([^"]+)"?/.exec(contentDisposition);
+                        if (matches && matches[1]) {
+                            filename = matches[1];
+                        }
+                    }
+                    
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                    
+                    addSystemMessage('✅ Chat history downloaded as PDF successfully!', 'success');
+                } else {
+                    const data = await response.json();
+                    addSystemMessage(data.error || 'Failed to download chat history');
+                }
+            } catch (error) {
+                addSystemMessage('Error downloading chat history');
+                console.error('Download error:', error);
+            }
+        }
+
+        // End chat function
+        async function endChat() {
+            if (chatEnded) return;
+            
+            chatEnded = true;
+            
+            try {
+                await fetch('/end_session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+            } catch (error) {
+                console.error('Error ending session:', error);
+            }
+            
+            addSystemMessage('Chat ended. Download your chat history as PDF before refreshing!');
+            userInput.disabled = true;
+            sendButton.disabled = true;
+            endButton.disabled = true;
+            userInput.placeholder = 'Chat has ended...';
+        }
+
+        // Send message
+        async function sendMessage() {
+            if (chatEnded) return;
+            
+            const message = userInput.value.trim();
+            
+            if (!message) return;
+
+            // Check if user typed "quit"
+            if (message.toLowerCase() === 'quit') {
+                addMessage(message, 'user');
+                userInput.value = '';
+                await endChat();
+                return;
+            }
+            
+            // Add user message
+            addMessage(message, 'user');
+            userInput.value = '';
+            sendButton.disabled = true;
+            
+            // Show typing indicator
+            toggleTypingIndicator(true);
+            
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                const data = await response.json();
+                
+                // Hide typing indicator
+                toggleTypingIndicator(false);
+                
+                if (data.error) {
+                    addMessage('Sorry, something went wrong. Please try again.', 'bot');
+                } else {
+                    addMessage(data.response, 'bot');
+                }
+            } catch (error) {
+                toggleTypingIndicator(false);
+                addMessage('Sorry, I couldn\'t connect to the server.', 'bot');
+            } finally {
+                sendButton.disabled = false;
+                userInput.focus();
+            }
+        }
+
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+        
+        endButton.addEventListener('click', async () => {
+            if (!chatEnded) {
+                addMessage('quit', 'user');
+                await endChat();
+            }
+        });
+        
+        downloadBtn.addEventListener('click', downloadChat);
+        
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !chatEnded) {
+                sendMessage();
+            }
+        });
+
+        // Focus input on load
+        userInput.focus();
+    </script>
+</body>
+</html>

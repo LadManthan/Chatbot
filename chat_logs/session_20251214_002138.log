@@ -1,0 +1,14 @@
+2025-12-14 00:21:38,015 - ==== New Chat Session Started ====
+2025-12-14 00:21:57,785 - User Input: hello
+2025-12-14 00:21:57,937 - Bot Response: I do not understand... (confidence: 0.5335)
+2025-12-14 00:21:57,937 - Processing time: 0.1510 seconds
+2025-12-14 00:22:03,879 - User Input: what is cricket?
+2025-12-14 00:22:03,884 - Bot Response: Cricket is a bat-and-ball team sport played between two teams of eleven players each. (tag: cricket, confidence: 0.9937)
+2025-12-14 00:22:03,884 - Processing time: 0.0043 seconds
+2025-12-14 00:22:38,561 - User Input: what is DLS method?
+2025-12-14 00:22:38,564 - Bot Response: DLS adjusts the target score based on overs lost and resources remaining. (tag: dls method, confidence: 0.9986)
+2025-12-14 00:22:38,564 - Processing time: 0.0035 seconds
+2025-12-14 00:24:14,299 - User Input: who are the famous players of indian team?
+2025-12-14 00:24:14,302 - Bot Response: India has many great players such as Tendulkar, Kohli, Dhoni, and Bumrah. (tag: famous indian players, confidence: 0.8184)
+2025-12-14 00:24:14,303 - Processing time: 0.0030 seconds
+2025-12-14 00:25:12,770 - ==== Chat Log Downloaded ====

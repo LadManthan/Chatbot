@@ -1,0 +1,14 @@
+2025-12-14 20:53:20,540 - ==== New Chat Session Started ====
+2025-12-14 20:53:40,556 - User Input: what do you know about cricket?
+2025-12-14 20:53:40,726 - Bot Response: It is a sport where one team bats to score runs while the other bowls and fields to stop them. (tag: cricket, confidence: 0.9874)
+2025-12-14 20:53:40,727 - Processing time: 0.1702 seconds
+2025-12-14 20:53:51,149 - User Input: what is a DRS?
+2025-12-14 20:53:51,150 - Bot Response: DRS allows teams to challenge umpire decisions using technologies like Hawk-Eye and UltraEdge. (tag: drs, confidence: 0.9805)
+2025-12-14 20:53:51,151 - Processing time: 0.0010 seconds
+2025-12-14 20:54:02,032 - User Input: how many trophies have India won?
+2025-12-14 20:54:02,034 - Bot Response: India has won 5 ICC trophies: 1983 WC, 2007 T20 WC, 2011 WC, 2013 Champions Trophy, and 2024 T20 WC. (tag: india icc trophies, confidence: 0.9992)
+2025-12-14 20:54:02,035 - Processing time: 0.0024 seconds
+2025-12-14 20:56:53,181 - User Input: what are the records of virat kohli?
+2025-12-14 20:56:53,183 - Bot Response: Kohli holds records like most ODI centuries (50+), fastest to 12k ODI runs, most T20I runs, and highest IPL runs. (tag: virat kohli records, confidence: 0.9977)
+2025-12-14 20:56:53,184 - Processing time: 0.0020 seconds
+2025-12-14 20:56:57,004 - ==== Chat Session Ended ====

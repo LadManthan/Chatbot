@@ -1,0 +1,15 @@
+2025-12-14 20:57:20,899 - ==== New Chat Session Started ====
+2025-12-14 20:57:29,072 - User Input: what do you mean by cricket?
+2025-12-14 20:57:29,073 - Bot Response: It is a sport where one team bats to score runs while the other bowls and fields to stop them. (tag: cricket, confidence: 0.8859)
+2025-12-14 20:57:29,073 - Processing time: 0.0010 seconds
+2025-12-14 20:57:36,769 - User Input: what is DRS?
+2025-12-14 20:57:36,772 - Bot Response: DRS allows teams to challenge umpire decisions using technologies like Hawk-Eye and UltraEdge. (tag: drs, confidence: 0.9966)
+2025-12-14 20:57:36,772 - Processing time: 0.0023 seconds
+2025-12-14 20:57:45,817 - User Input: what is DLS?
+2025-12-14 20:57:45,819 - Bot Response: DLS adjusts the target score based on overs lost and resources remaining. (tag: dls method, confidence: 0.9930)
+2025-12-14 20:57:45,819 - Processing time: 0.0025 seconds
+2025-12-14 20:57:59,334 - User Input: how many teams are playing cricket?
+2025-12-14 20:57:59,336 - Bot Response: More than 100 nations participate in cricket worldwide. (tag: number of teams, confidence: 0.9703)
+2025-12-14 20:57:59,336 - Processing time: 0.0020 seconds
+2025-12-14 20:58:02,856 - ==== Chat PDF Downloaded ====
+2025-12-14 20:58:27,877 - ==== Chat Session Ended ====
